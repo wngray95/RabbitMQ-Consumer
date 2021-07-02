@@ -13,16 +13,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Employee.class)
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Company.class)
 @Getter @Setter @ToString
 @NoArgsConstructor
 @Entity
-public class Employee implements Serializable {
+public class Company implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String empName;
-    private String empId;
-    private String position;
+    private Integer Id;
+    private String name;
+    private String address;
+
 }
