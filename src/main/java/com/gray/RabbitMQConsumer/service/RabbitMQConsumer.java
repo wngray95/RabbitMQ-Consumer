@@ -27,14 +27,14 @@ public class RabbitMQConsumer {
     public void receivedMessage(Employee employee) {
        System.out.println("Received Message From RabbitMQ: " + employee);
        Employee savedEmp = employeeRepository.save(employee);
-       System.out.println("Employee saved to db: " + savedEmp);
+       System.out.println("Employee saved to db::: " + savedEmp);
     }
 
     @RabbitListener(queues = "${gray.rabbitmq.companyQueueName}", containerFactory = "jsaFactory")
     public void receivedMessage(Company company) {
         System.out.println("Received Message From RabbitMQ: " + company);
         Company savedCo = companyRepository.save(company);
-        System.out.println("Company saved to db: " + savedCo);
+        System.out.println("Company saved to db::: " + savedCo);
     }
 
 }
